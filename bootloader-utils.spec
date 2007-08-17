@@ -47,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 /sbin/kernel_remove_initrd
 %{_sbindir}/detectloader
 %{_sbindir}/rebootin
-%{_mandir}/man8/detectloader.8.bz2
-%{_mandir}/man8/rebootin.8.bz2
+%{_mandir}/man8/detectloader.*
+%{_mandir}/man8/rebootin.*
 
 
