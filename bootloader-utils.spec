@@ -7,6 +7,7 @@ Release:	%mkrel 1
 Source0:	%{name}-%{version}.tar.bz2
 License:	GPL+
 Group:		System/Kernel and hardware
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	perl-base
 
 Requires(post,preun):	chkconfig rpm-helper
