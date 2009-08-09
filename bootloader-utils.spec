@@ -3,7 +3,7 @@
 Summary:	Small utils needed for the kernel
 Name:		bootloader-utils
 Version:	1.15
-Release:	%mkrel 3
+Release:	%mkrel 4
 Source0:	%{name}-%{version}.tar.bz2
 License:	GPL+
 Group:		System/Kernel and hardware
