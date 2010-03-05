@@ -13,7 +13,7 @@ Requires:	perl-base
 Requires(post,preun):	chkconfig rpm-helper
 Requires(post,preun):	initscripts >= 7.06-21mdk
 
-URL:            http://cvs.mandriva.com/cgi-bin/cvsweb.cgi/soft/initscripts/mandrake/loader/
+URL:            http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/bootloader-utils/
 Requires:	drakxtools-backend >= 10-52mdk
 BuildRequires:	perl-MDK-Common
 BuildArch:	noarch
