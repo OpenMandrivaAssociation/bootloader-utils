@@ -1,9 +1,8 @@
-%define _mypost_service() if [ $1 = 1 ]; then /sbin/chkconfig --add %{1}; fi;
-
 Summary:	Small utils needed for the kernel
 Name:		bootloader-utils
-Version:	1.15
-Release:	%mkrel 4
+### DO NOT RELEASE BEFORE 2010.1 Alpha 3
+#Version:	1.15
+#Release:	%mkrel 5
 Source0:	%{name}-%{version}.tar.bz2
 License:	GPL+
 Group:		System/Kernel and hardware
@@ -29,22 +28,25 @@ bootloaders.
 make
 
 %install
-rm -rf $RPM_BUILD_ROOT
-make ROOT=$RPM_BUILD_ROOT mandir=%{_mandir} install
+rm -rf %{buildroot}
+make ROOT=%{buildroot} mandir=%{_mandir} install
+# nuke obsolete kheader initscript
+rm -rf %{buildroot}/etc/rc.d/init.d/kheader
 
-%post
-%_mypost_service kheader
-
-%preun
-%_preun_service kheader
+%pre
+# disable obsolete kheader script on update if it exists
+if [ $1 = 2 ]; then
+    if [ -x /etc/rc.d/init.d/kheader ]; then
+	chkconfig --del kheader
+    fi
+fi
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
 %config(noreplace) /etc/sysconfig/installkernel
-/etc/rc.d/init.d/kheader
 /sbin/installkernel
 /sbin/kernel_remove_initrd
 %{_sbindir}/detectloader
