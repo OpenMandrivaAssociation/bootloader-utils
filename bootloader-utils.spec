@@ -10,7 +10,7 @@ Requires:	perl-base
 Requires(post,preun):	chkconfig rpm-helper
 Requires(post,preun):	initscripts >= 7.06-21mdk
 
-URL:            http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/bootloader-utils/
+URL:		http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/bootloader-utils/
 Requires:	drakxtools-backend >= 13.52-3
 BuildRequires:	perl-MDK-Common
 BuildArch:	noarch
@@ -46,4 +46,3 @@ fi
 %{_sbindir}/rebootin
 %{_mandir}/man8/detectloader.*
 %{_mandir}/man8/rebootin.*
-
