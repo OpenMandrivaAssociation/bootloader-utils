@@ -1,7 +1,7 @@
 Summary:	Small utils needed for the kernel
 Name:		bootloader-utils
 Version:	1.15
-Release:	%mkrel 7
+Release:	8
 Source0:	%{name}-%{version}.tar.bz2
 License:	GPL+
 Group:		System/Kernel and hardware
@@ -12,7 +12,7 @@ Requires(post,preun):	chkconfig rpm-helper
 Requires(post,preun):	initscripts >= 7.06-21mdk
 
 URL:            http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/bootloader-utils/
-Requires:	drakxtools-backend >= 10-52mdk
+Requires:	drakxtools-backend >= 13.52-3
 BuildRequires:	perl-MDK-Common
 BuildArch:	noarch
 
