@@ -3,7 +3,7 @@ Name:		bootloader-utils
 Version:	1.15
 Release:	8
 Source0:	%{name}-%{version}.tar.bz2
-License:	GPL+
+License:	GPLv2+
 Group:		System/Kernel and hardware
 Requires:	perl-base
 
