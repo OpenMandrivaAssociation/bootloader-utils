@@ -5,7 +5,6 @@ Release:	8
 Source0:	%{name}-%{version}.tar.bz2
 License:	GPL+
 Group:		System/Kernel and hardware
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	perl-base
 
 Requires(post,preun):	chkconfig rpm-helper
@@ -27,7 +26,6 @@ bootloaders.
 make
 
 %install
-rm -rf %{buildroot}
 make ROOT=%{buildroot} mandir=%{_mandir} install
 # nuke obsolete kheader initscript
 rm -rf %{buildroot}/etc/rc.d/init.d/kheader
@@ -40,11 +38,7 @@ if [ $1 = 2 ]; then
     fi
 fi
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %config(noreplace) /etc/sysconfig/installkernel
 /sbin/installkernel
 /sbin/kernel_remove_initrd
