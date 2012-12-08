@@ -1,0 +1,22 @@
+--- bootloader-utils-1.15/installkernel.initrdsymlink	2006-05-11 16:45:38.000000000 +0400
++++ bootloader-utils-1.15/installkernel	2012-07-16 16:49:34.543582758 +0400
+@@ -120,6 +120,19 @@ options="--action $action"
+ [ -z "$NOLAUNCH" ] || options="--no-launch $options"
+ [ -z "$NOINITRD" ] || options="--no-initrd $options"
+ 
++# bug #215 http://bugs.rosalinux.ru/show_bug.cgi?id=215
++# if initrd.img not symlink
++[ -e /boot/initrd.img -a ! -L /boot/initrd.img ] && {
++  # get name from vmlinuz symlink
++  [ -L /boot/vmlinuz ] && {
++    l=`readlink /boot/vmlinuz  | sed -n 's/^vmlinuz-/initrd-/p'`
++    [ -n "$l" ] && {
++      mv /boot/initrd.img /boot/$l.img
++      ln -s $l.img /boot/initrd.img
++    }
++  }
++}
++
+ if [ -x /usr/sbin/bootloader-config ]; then  
+     bootloader-config --kernel-version $version --initrd-options "$INITRDOPTS" $options
+ fi
