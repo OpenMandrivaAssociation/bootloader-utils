@@ -1,9 +1,9 @@
 Summary:	Small utils needed for the kernel
 Name:		bootloader-utils
 Version:	1.15
-Release:	9
+Release:	10
 Source0:	%{name}-%{version}.tar.bz2
-Patch0:         bootloader-utils.initrdsymlink.patch
+Patch0:		bootloader-utils.initrdsymlink.patch
 License:	GPL+
 Group:		System/Kernel and hardware
 Requires:	perl-base
@@ -11,7 +11,7 @@ Requires:	perl-base
 Requires(post,preun):	chkconfig rpm-helper
 Requires(post,preun):	initscripts >= 7.06-21
 
-URL:            http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/bootloader-utils/
+URL:		http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/bootloader-utils/
 Requires:	drakxtools-backend >= 10-52
 BuildRequires:	perl-MDK-Common
 BuildArch:	noarch
@@ -41,7 +41,6 @@ if [ $1 = 2 ]; then
 fi
 
 %files
-%defattr(-,root,root)
 %config(noreplace) /etc/sysconfig/installkernel
 /sbin/installkernel
 /sbin/kernel_remove_initrd
