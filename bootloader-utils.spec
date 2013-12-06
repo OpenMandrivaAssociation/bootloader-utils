@@ -1,7 +1,7 @@
 Summary:	Small utils needed for the kernel
 Name:		bootloader-utils
 Version:	1.16
-Release:	4
+Release:	5
 License:	GPL+
 Group:		System/Kernel and hardware
 URL:		http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/bootloader-utils/
