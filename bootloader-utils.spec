@@ -1,7 +1,7 @@
 Summary:	Small utils needed for the kernel
 Name:		bootloader-utils
 Version:	1.16
-Release:	8
+Release:	9
 License:	GPL+
 Group:		System/Kernel and hardware
 URL:		https://abf.io/omv_software/bootloader-utils
